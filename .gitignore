@@ -24,4 +24,5 @@ tempCodeRunnerFile.cpp
 test.cpp
 test
 
-*/.bin
+*.bin
+*.cpp.bin
