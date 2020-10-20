@@ -1,7 +1,7 @@
 // 884A 
 // Author: REET
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 typedef long long ll;
@@ -12,7 +12,7 @@ int main() {
     cin >> n >> t;
     // t is in seconds
     // n is the number of days
-    vector<int> v(n);
+    int v[n];
     for(int i=0; i<n; i++)
         cin >> v[i];
     for(int i=0; i<n; i++) {
