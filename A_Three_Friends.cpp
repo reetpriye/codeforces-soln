@@ -14,8 +14,29 @@ int main() {
         for(int i=0; i<3; i++)
             cin >> v[i];
         sort(v.begin(), v.end());
-        
-        cout << abs(v[0]-v[1])+abs(v[1]-v[2])+abs(v[0]-v[2]) << endl;
+        if(v[0]==v[1] && v[1]==v[2]) {
+            cout << 0 << endl;
+            continue;
+        }
+        if(v[0]==v[1] && v[1]!=v[2]) {
+            v[0]++;
+            v[1]++;
+            if(v[1]!=v[2])
+                v[2]--;
+            cout << 2*(v[2]-v[1]) << endl;
+            continue;
+        }
+        if(v[1]==v[2] && v[0]!=v[1]) {
+            v[1]--;
+            v[2]--;
+            if(v[0]!=v[1])
+                v[0]++;
+            cout << 2*(v[1]-v[0]) << endl;
+            continue;
+        }
+        v[0]++;
+        v[2]--;
+        cout << v[2]-v[1] + v[1]-v[0] + v[2]-v[0] << endl;
     }
     return 0;
 }

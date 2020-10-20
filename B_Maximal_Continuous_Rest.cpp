@@ -8,28 +8,33 @@ typedef long long ll;
 
 int main() {
     int n;
-    int i = 0;
     int cnt = 0;
+    int max = 0;
+    int frnt = 0;
+    int bck = 0;
+    int k = 0;
     cin >> n;
     vector<int> v(n);
-    vector<int> res;
-    while(i!=1) {
-        i++;
+    for(int i=0; i<n; i++)
+        cin >> v[i];
+    if(v[0]==1 && v[n-1]==1) {
+        while(v[k]!=0) {
+            frnt++;
+            k++;
+        }
+        k = n-1;
+        while(v[k]!=0) {
+            bck++;
+            k--;
+        }
     }
-    while(1) {
-        if(i<n-1 && v[i]==v[i+1]==1) {
+    for(int i=0; i<n; i++) {
+        if(v[i]==1)
             cnt++;
-            if(i==n-1) {
-                i = 0;
-            }
-            else i++;
-        }
-        else {
-            res.push_back(cnt+1);
-            cnt = 0;
-            i++;
-        }
+        else cnt = 0;
+        if(cnt>=max)
+            max = cnt;
     }
-    cout << *max_element(v.begin(), v.end()) << endl;
+    frnt+bck >= max ? cout << frnt+bck << endl: cout << max << endl;
     return 0;
 }
