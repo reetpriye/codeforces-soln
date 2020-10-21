@@ -106,6 +106,21 @@ const double eps = (1e-7);
 #define REPR(i,k,n) for (i = k; i >= n; --i) 
 
 
+// Basic macros
+#define st          first
+#define se          second
+#define all(x)      (x).begin(), (x).end()
+#define ini(a, v)   memset(a, v, sizeof(a))
+#define re(i,s,n)  	for(int i=s;i<(n);++i)
+#define rep(i,s,n)  for(int i=s;i<=(n);++i)
+#define fr(i,n)     re(i,0,n)
+#define repv(i,f,t) for(int i = f; i >= t; --i)
+#define rev(i,f,t)  repv(i,f - 1,t)
+#define frv(i,n)    rev(i,n,0)
+#define pu          push_back
+#define mp          make_pair
+#define sz(x)       (int)(x.size())
+
 int main {
 
     return 0;
