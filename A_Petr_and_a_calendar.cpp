@@ -7,7 +7,7 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-    vector<float> md = {31,30,31,30,31,30,31,31,30,31,30,31};
+    vector<float> md = {31,28,31,30,31,30,31,31,30,31,30,31};
     // Monday to Sunday
     float m;
     float d;
