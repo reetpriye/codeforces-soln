@@ -10,6 +10,8 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "forward_list": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp"
     }
 }
