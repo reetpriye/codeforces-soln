@@ -11,19 +11,20 @@ int main() {
     int T;
     cin >> T;
     while(T--) {
-        double n;
-        double sum = 3;
-        ll k = 2;
-        ll x;
+        ll n;
+        ll sum; 
         cin >> n;
-        while(1) {
-            if((floor(sum/n))==(sum/n)) {
-                cout << ll(sum/n) << endl; 
-                break;
+        for(int x=1; x<=LONG_LONG_MAX; x++) {
+            sum = x;
+            for(int k=2; sum<=n; k++) {
+                if(sum==n) {
+                    cout << x << "\n";
+                    goto end;
+                }
+                sum += (pow(2,k-1))*x;
             }
-            sum += pow(2,k-1);
-            k++;
         }
+        end : continue;
     }
     return 0;
 }

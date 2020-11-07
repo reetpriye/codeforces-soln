@@ -8,9 +8,10 @@ typedef long long ll;
 
 int main() {
     int n;
-    int j = 0;
+    int j;
     map<string, string> mp;
     string last;
+    string first;
     cin >> n;
     cin.ignore();
     vector<string> v(n);
@@ -19,21 +20,45 @@ int main() {
     }
     sort(v.begin(), v.end());
     for(int i=0; i<n; i++) {
-        while(v[i][j]!=' ')
+        j = 0;
+        first = "";
+        last = "";
+        while(v[i][j]!=' ') {
+            first += v[i][j];
             j++;
+        }
         j++;
         while(v[i][j]!='\0') {
             last += v[i][j];
             j++;
         }
-        mp[last] = v[i];
-        j = 0;
-        last = "";
+        mp[first] = last;
     }
-    for (auto i : mp)
-    {
-        cout << "{" << i.first << "," << i.second << "} ";
+    for (auto it = mp.begin(); it!=mp.end(); ++it) {
+        if(it->second=="rat") {
+            cout << it->first << "\n";
+        }
     }
-    cout << endl;
+    for (auto it = mp.begin(); it!=mp.end(); ++it) {
+        if(it->second=="woman") {
+            cout << it->first << "\n";
+        }
+    }
+    for (auto it = mp.begin(); it!=mp.end(); ++it) {
+        if(it->second=="child") {
+            cout << it->first << "\n";
+        }
+    }
+    for (auto it = mp.begin(); it!=mp.end(); ++it) {
+        if(it->second=="man") {
+            cout << it->first << "\n";
+        }
+    }
+    for (auto it = mp.begin(); it!=mp.end(); ++it) {
+        if(it->second=="captain") {
+            cout << it->first << "\n";
+        }
+    }
     return 0;
+
 }
