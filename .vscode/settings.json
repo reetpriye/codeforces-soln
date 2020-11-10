@@ -14,5 +14,6 @@
         "bitset": "cpp",
         "string_view": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "editor.lineNumbers": "off"
 }
