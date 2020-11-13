@@ -7,27 +7,27 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-    int n;
-    int z = 1;
-    int ori;
-    int cnt = 0;
-    int d;
+    ll n;
+    double d;
+    ll prev;
+    double rem;
+    ll cnt = 0;
     cin >> n >> d;
-    vector<int> v(n);
-    for(int i=0; i<n; i++) {
+    vector<ll> v(n);
+    for(ll i=0; i<n; i++)
         cin >> v[i];
-        if(i!=0 && v[i]<=v[i-1]) {
-            ori = v[i];
-            while(1) {
-                v[i] = v[i-1]+z;
-                if((v[i]-ori)%d==0) {
-                    cnt += (v[i]-ori)/d;
-                    z = 1;
-                    break;
-                }
-                z++;
-            }
+    prev = v[0];
+    for(ll i=1; i<n; i++) {
+        if(prev==v[i]) {
+            cnt++;
+            prev = v[i]+1;
         }
+        else if(prev>=v[i]) {
+            rem = prev-v[i]+1;
+            cnt += ceil(rem/d);
+            prev = v[i]+(ceil(rem/d)*d);
+        }
+        else prev = v[i];
     }
     cout << cnt << "\n";
     return 0;

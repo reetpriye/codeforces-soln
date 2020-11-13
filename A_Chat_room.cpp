@@ -7,38 +7,48 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-    string t = "hello";
     string s;
-    string str;
-    int idx = -1;
-    int flag = 1;
-    int lcnt = 0;
+    int i = 0;
     cin >> s;
-    for(int i=0; i<s.size(); i++) {
-        if(t.find(s[i])==string::npos) {
-            s.erase(i,1);
-            i=-1;
+    while(s[i]!='h') {
+        if(s=="") {
+            cout << "NO\n";
+            return 0;
         }
+        s.erase(i,1);
     }
-    for(int i=0; i<s.size(); i++) {
-        if(s[i]=='h' && idx<i) {
-            idx = i;
+    i++;
+    while(s[i]!='e') {
+        if(s=="h") {
+            cout << "NO\n";
+            return 0;
         }
-        else if(s[i]=='e' && idx<i) {
-            idx = i;
-        }
-        else if(s[i]=='l' && idx<i) {
-            idx = i;
-            lcnt++;
-        }
-        else if(s[i]=='o' && idx<i) {
-            idx = i;
-        }
-        else flag = 0;
+        s.erase(i,1);
     }
-    if(flag==0)
-        cout << "NO\n";
-    else if(lcnt<2)
-        cout << "NO\n";
-    else cout << "YES\n";
+    i++;
+    while(s[i]!='l') {
+        if(s=="he") {
+            cout << "NO\n";
+            return 0;
+        }
+        s.erase(i,1);
+    }
+    i++;
+    while(s[i]!='l') {
+        if(s=="hel") {
+            cout << "NO\n";
+            return 0;
+        }
+        s.erase(i,1);
+    }
+    i++;
+    while(s[i]!='o') {
+        if(s=="hell") {
+            cout << "NO\n";
+            return 0;
+        }
+        s.erase(i,1);
+    }
+    s.erase(s.begin()+5, s.end());
+    s=="hello" ? cout << "YES\n" : cout << "NO\n";
 }

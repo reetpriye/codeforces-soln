@@ -4,26 +4,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool sortBySecDesc(pair<int, int> a, pair<int, int> b) {
-    return a.second>=b.second;
-}
-
-int main() {
-    int n;
-    int k;
-    cin >> n >> k;
-    vector<pair<int, int>> v(n);
-    vector<int> res;
-    for(int i=0; i<n; i++) {
-        v[i].first = i+1;
-        cin >> v[i].second;
+int main()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    int n,k;
+    cin>>n>>k;
+    pair<int,int> ar[1001];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&ar[i].first);
+        ar[i].second=i;
     }
-    sort(v.begin(), v.end(), sortBySecDesc);
-    cout << v[k-1].second << "\n";
-    for(int i=0; i<k; i++)
-        res.push_back(v[i].first);
-    sort(res.begin(), res.end());
-    for(auto i:res)
-        cout << i << " ";
+    sort(ar,ar+n);
+    reverse(ar,ar+n);
+    int mn=2000000000;
+    for(int i=k-1;i>=0;i--)
+    {
+        mn=min(mn,ar[i].first);
+    }
+    cout<<mn<<endl;
+    vector<int>v;
+    for(int i=k-1;i>=0;i--)
+    {
+        v.push_back(ar[i].second+1);
+    }
+    sort(v.begin(),v.end());
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<" ";
+    }
+    cout<<"\n";
     return 0;
 }
