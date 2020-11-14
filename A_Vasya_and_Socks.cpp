@@ -9,29 +9,17 @@ typedef long long ll;
 int main() {
     int n;
     int m;
-    int z;
-    int tmp;
-    int i = 0;
+    int q;
+    int socks;
     cin >> n >> m;
-    if(m>n) {
-        cout << n << endl;
-        return 0;
+    socks = n;
+    q = m;
+    while(q<=n) {
+        socks++;
+        n++;
+        q += m;
     }
-    if(m==n) {
-        cout << n+1 << endl;
-        return 0;
-    }
-    z = n + n/m;
-    i += z-n;
-    while(((z-n)/m>0)) {
-        n=z;
-        i+=((z-n)/m);
-        z+=((z-n)/m);
-    }
-    if((z-n)/m==0)
-        i++;
-    cout << n+i << endl;
-    return 0;
+    cout << socks << "\n";
 }
 
 // 10 2 -> 15 + 2 -> 17

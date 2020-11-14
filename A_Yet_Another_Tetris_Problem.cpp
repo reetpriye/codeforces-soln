@@ -1,4 +1,4 @@
-// 1295A 
+// 1324A 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -11,14 +11,14 @@ int main() {
     cin >> T;
     while(T--) {
         int n;
-        int max = INT_MIN;
         cin >> n;
-        vector<int> v = {6,2,5,5,4,5,6,3,7,6};
-        for(int i=9; i>=0; i--) {
-            if(v[i]==n)
-                cout << i << endl;
+        vector<int> v(n);
+        for(int i=0; i<n; i++)
+            cin >> v[i];
+        while(1) {
+            *max_element(v.begin(), v.end());
+            *min_element(v.begin(), v.end());
         }
-        
     }
     return 0;
 }
