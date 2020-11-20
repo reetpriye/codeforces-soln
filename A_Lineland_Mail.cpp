@@ -14,16 +14,23 @@ int main() {
     vector<int> v(n);
     for(int i=0; i<n; i++)
         cin >> v[i];
-    for(int i=0; i<n; i++) {
-        max = INT_MIN;
-        min = INT_MAX;
-        for(int j=0; j<n; j++) {
-            if(i!=j && abs(v[i]-v[j])>=max)
-                max = abs(v[i]-v[j]);
-            if(i!=j && abs(v[i]-v[j])<=min)
-                min = abs(v[i]-v[j]);
+    cout << v[1]-v[0] << " ";
+    cout << v.back()-v[0] << " \n";
+    for(int i=1; i<n; i++) {
+        if(v[i+1]-v[i]<=v[i]-v[i-1]) {
+            min = v[i+1]-v[i];
         }
-        cout << min << " " << max << endl;
+        else {
+            min = v[i]-v[i-1];
+        }
+        if(v.back()-v[i]>= v[i]-v.front()) {
+            max = v.back()-v[i];
+        }
+        else {
+            max = v[i]-v.front();
+        }
+        if(max != 0 && min != 0)
+            cout << min << " " << max << "\n";
     }
     return 0;
 }
