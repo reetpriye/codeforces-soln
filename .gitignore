@@ -24,6 +24,10 @@ tempCodeRunnerFile.cpp
 test.cpp
 test
 
+#Input Output Files
+input.txt
+output.txt
+
 *.bin
 *.cpp.bin
 *.exe
