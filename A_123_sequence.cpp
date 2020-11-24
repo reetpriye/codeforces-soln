@@ -7,6 +7,9 @@ using namespace std;
 typedef long long ll;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n;
     int one = 0;
     int two = 0;
@@ -19,21 +22,19 @@ int main() {
             one++;
         else if(v[i]==2)
             two++;
-        else thr++;
+        else
+            thr++;
     }
-    if(one+two<=thr) {
-        cout << one+two << endl;
-    }
-    else if(one+thr<=two) {
-        cout << one+thr << endl;
-    }
-    else if(two+thr<=one) {
-        cout << two+thr << endl;
-    }
+    if(one>=two && one>=thr)
+        cout << two+thr;
+    else if(two>=one && two>=thr)
+        cout << one+thr;
+    else
+        cout << one+two;
     return 0;
 }
 /*
-1 
-2 
-3 
+1 vs 2&3
+2 vs 1&3
+3 vs 1&2
 */

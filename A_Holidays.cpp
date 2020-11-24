@@ -8,23 +8,18 @@ typedef long long ll;
 
 int main() {
     int n;
-    int rem;
-    int quo;
+    int q;
+    int r;
     cin >> n;
-    if(n==6) {
-        cout << "1 2\n";
-        return 0;
-    }
-    if(n==7) {
-        cout << "2 2\n";
-        return 0;
-    }
-    rem = n%7;
-    quo = n/7;
-    cout << quo*2 << " ";
-    if(rem>2)
-        cout << (quo*2)+2 << "\n";
-    else
-        cout << (quo*2)+rem << "\n";
+    r = n%7;
+    q = n/7;
+    if(r==0)
+        cout << 2*q << " " << 2*q;
+    else if(r==1)
+        cout << 2*q << " " << 2*q+1;
+    else if(r>=2 && r<=5)
+        cout << 2*q << " " << 2*q+2;
+    else // For 6
+        cout << 2*q+1 << " " << 2*q+2;
     return 0;
 }
