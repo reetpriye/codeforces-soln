@@ -865,7 +865,7 @@ void pbit(int N){	printf("("); for(int i=10;i>=0;i--)	{bool x=check(N,i);cout<<x
  
 int fx[]={0,0,1,-1,1,-1,1,-1};
 int fy[]={-1,1,0,0,-1,-1,1,1};
- 
+
 #define mx 10002
 int main()
 {	
@@ -888,3 +888,38 @@ int main {
 
     return 0;
 }
+
+#include<bits/stdc++.h>
+#define vi vector<int>
+#define vll vector<long long>
+#define ll long long
+#define ull unsigned long long
+#define FAST_IO ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define nl cout<<'\n'
+#define pb push_back
+#define mp make_pair
+#define pi pair<int,int>
+#define pll pair<long long,long long>
+#define vpii vector<pair<int,int> >
+#define vpll vector<pair<ll,ll> >
+#define si set<int>
+#define sll set<long long>
+#define all(v) (v).begin(),(v).end()
+#define Unique(x)           (x).erase(unique(all(x)), x.end())
+#define v_present(vec,x)  (find(all(vec),x)!=(vec).end())
+#define present(myset,x)    ((myset).find(x)!=(myset).end())
+#define Cprint(c)  for(auto i:(c)) { cout<<i<<" "; } nl
+#define trace2(x,y) cout<<x<<" "<<y<<endl;
+#define trace3(x,y,z) cout<<x<<" "<<y<<" "<<z<<endl;
+#define trace4(x,y,z,a) cout<<x<<" "<<y<<" "<<z<<" "<<a<<endl;
+ll mod = 1e9+7;
+const int MAX = 1e5+5;
+
+typedef signed char          int8;
+typedef unsigned char       uint8;
+typedef short                int16;
+typedef unsigned short      uint16;
+typedef int                  int32;
+typedef unsigned            uint32;
+typedef long long            int64;
+typedef unsigned long long  uint64;
