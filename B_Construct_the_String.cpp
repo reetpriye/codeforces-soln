@@ -22,6 +22,7 @@ int main() {
                 s += al[k++];
             }
             
+            
         }
         cout << s << endl;
     }

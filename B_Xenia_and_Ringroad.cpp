@@ -1,4 +1,4 @@
-// 1343A 
+// 339B 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -11,16 +11,12 @@ typedef long long ll;
 int main() {
     FAST_IO;
 
-    int T;
-    cin >> T;
-    while(T--) {
-        int n;
-        cin >> n;
-        
-    }
+    int n;
+    int m;
+    cin >> n >> m;
+    vector<int> v(m);
+    for(int i=0; i<m; i++)
+        cin >> v[i];
+    
     return 0;
 }
-
-// x+2x+4x+...+2^k-1x = n;
-// 1+2+4+....+2^(k-1) = 
-// Sum of AP Series = n/2[2a+(n-1)d]
