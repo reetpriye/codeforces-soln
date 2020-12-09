@@ -18,13 +18,14 @@ int main() {
         string al = "abcdefghijklmnopqrstuvwxyz";
         cin >> n >> a >> b;
         for(int i=0; i<n; i++) {
-            while(a--) {
-                s += al[k++];
+            for(int j=i; j<a; j++) {
+                if(k>=26)
+                    k=0;
+                s+=al[]
             }
-            
-            
         }
         cout << s << endl;
     }
+
     return 0;
 }

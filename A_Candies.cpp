@@ -8,18 +8,49 @@ using namespace std;
 
 typedef long long ll;
 
+// One Approach
+
+// int main() {
+//     FAST_IO;
+
+//     int T;
+//     cin >> T;
+//     while(T--) {
+//         int n;
+//         cin >> n;
+//         int k = 2;
+//         while(n%((int)pow(2,k)-1))
+//             k++;
+//         cout << n/((int)pow(2,k)-1) << "\n";
+//     }
+//     return 0;
+// }
+
+// Second Approach
+
 int main() {
     FAST_IO;
 
     int T;
     cin >> T;
     while(T--) {
-        int n;
+        ll n;
         cin >> n;
-        int k = 2;
-        while(n%((int)pow(2,k)-1))
-            k++;
-        cout << n/((int)pow(2,k)-1) << "\n";
+        ll start = 1;
+        int i = 1;
+        while(1) {
+            start += 1ll<<i;
+            i++;
+            if(n%start==0)
+                break;
+        }
+        cout << n/start << "\n";
+        // for(int i=1;; i++) {
+        //     start += 1ll<<i;
+        //     if(n%start==0)
+        //         break;
+        // }
+        // cout << n/start << "\n";
     }
     return 0;
 }
