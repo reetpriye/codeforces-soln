@@ -13,11 +13,19 @@ int main() {
 
     int n;
     int t;
-    cin >> n >> t;
+    int tmp;
+    int idx = 0;
+    int idx_val = 0;
+    cin >> n>> t;
     vector<pair<int, int>> v(n);
+    vector<int> r(n);
     for(int i=0; i<n; i++) {
         cin >> v[i].first >> v[i].second;
     }
+    for(int i=0; i<n; i++) {
+        
+    }
+    cout << idx;
     
     return 0;
 }

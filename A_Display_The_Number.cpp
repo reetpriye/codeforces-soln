@@ -1,24 +1,30 @@
-// 1295A 
+// 1295A
 // Author: REET
 
 #include <bits/stdc++.h>
 using namespace std;
 
+#define FAST_IO ios_base::sync_with_stdio(false); cin.tie(NULL)
+
 typedef long long ll;
 
 int main() {
+    FAST_IO;
+
     int T;
     cin >> T;
     while(T--) {
         int n;
-        int max = INT_MIN;
+        int m;
         cin >> n;
-        vector<int> v = {6,2,5,5,4,5,6,3,7,6};
-        for(int i=9; i>=0; i--) {
-            if(v[i]==n)
-                cout << i << endl;
+        if(n%2!=0) {
+            cout << 7;
+            n -= 3;
         }
-        
+        m = n/2;
+        while(m--)
+            cout << 1;
+        cout << "\n";
     }
     return 0;
 }
