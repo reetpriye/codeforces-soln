@@ -10,16 +10,11 @@ int main() {
     int n;
     cin >> n;
     vector<int> a(n);
+    // a = b+x
     vector<int> x(n);
     vector<int> b(n);
-    cout << 0 << " ";
     for(int i=0; i<n; i++) {
-        cin >> a[i];
-        if(i!=0) {
-            x[i] = *max_element(a.begin(), a.begin()+i);
-            b[i] = a[i]-x[i];
-            cout << b[i] << " ";
-        }
+        cin >> b[i];
     }
     return 0;
 }
