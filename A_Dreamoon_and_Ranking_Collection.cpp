@@ -13,21 +13,25 @@ int main() {
         int n;
         int x;
         int tmp;
-        int last = 1;
+        int k = 1;
         cin >> n >> x;
-        vector<int> hashTable(101);
+        vector<bool> hashTable(201);
         for(int i=0; i<n; i++) {
             cin >> tmp;
-            hashTable[tmp]++;
+            hashTable[tmp] = true;
         }
-        for(int i=1; i<=100; i++) {
-            if(x==-1)
-                break;
-            if(hashTable[i]==0)
+        while(1) {
+            if(!hashTable[k]) {
                 x--;
-            last = i;
+            }
+            if(x==0)
+                break;
+            k++;
         }
-        cout << last-1 << endl;      
+        k++;
+        while(hashTable[k])
+            k++;
+        cout << k-1 << "\n";
     }
     return 0;
 }

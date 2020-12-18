@@ -13,25 +13,14 @@ int main() {
         int n;
         int flag = 0;
         int swapCnt = 0;
-        int maxCnt;
+        int max_ex;
         cin >> n;
         vector<int> v(n);
         for(int i=0; i<n; i++)
             cin >> v[i];
-        maxCnt = ((n*n-1)/2)-1;
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<n-1; j++) {
-                if(maxCnt<swapCnt) {
-                    flag = 1;
-                    break;
-                }
-                if(v[j+1]<v[j]) {
-                    swap(v[j+1],v[j]);
-                    swapCnt++;
-                }
-            }
-        }
-        flag == 1 ? cout << "NO\n": cout << "YES\n";
+        max_ex = ((n*n-1)/2)-1;
+        
+        
     }
     return 0;
 }
