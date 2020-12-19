@@ -21,8 +21,10 @@ int main() {
         return 0;
     }
     for(int i=0; i<n; i++) {
-        sum -= v[i];
-        if(sum%2 == 0) {
+        if(v[i]%2==0)
+            continue;
+        else {
+            sum -= v[i];
             cout << sum << endl;
             break;
         }

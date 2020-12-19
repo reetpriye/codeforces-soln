@@ -12,5 +12,6 @@ int main() {
     cin >> n >> m;
     // m mod 2^n
     
+    
     return 0;
 }
