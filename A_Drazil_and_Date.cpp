@@ -14,12 +14,16 @@ int main() {
     int b;
     int s;
     cin >> a >> b >> s;
-    if(s==a+b) {
-        cout << "Yes\n";
-    }
-    else {
-        
-    }
+    if(a<0)
+        a *= -1;
+    if(b<0)
+        b *= -1;
+    if(s<(a+b))
+        cout << "No";
+    else if((s-(a+b))%2==0)
+        cout << "Yes";
+    else 
+        cout << "No";
     return 0;
 }
 

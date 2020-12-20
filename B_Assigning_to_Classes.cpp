@@ -17,18 +17,10 @@ int main() {
         int n;
         cin >> n;
         vector<int> v(2*n);
-        vector<int> a;
-        vector<int> b;
         for(int i=0; i<2*n; i++)
             cin >> v[i];
         sort(v.begin(), v.end());
-        for(int i=0; i<2*n; i++) {
-            if(i%2==0)
-                a.push_back(v[i]);
-            else
-                b.push_back(v[i]);
-        }
-        cout << abs(a[a.size()/2]-b[b.size()/2]) << "\n";
+        cout << v[n]-v[n-1] << "\n";
     }
     return 0;
 }
