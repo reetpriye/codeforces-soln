@@ -16,23 +16,21 @@ int main() {
     cin >> n >> k;
     string s;
     cin >> s;
-    if(n==1 && k==1)
-        cout << "0";
-    else {
-        if(k>0 && s[0]!='1') {
-            s[0] = '1';
+    if(n==1 && k==1) {
+        cout << 0;
+        return 0;
+    }
+    if(k>=1 && s[0]!='1') {
+        s[0] = '1';
+        k--;
+    }
+    while(z<s.size() && k!=0) {
+        if(s[z]!='0') {
+            s[z] = '0';
             k--;
         }
-        while(1) {
-            if(k==0)
-                break;
-            if(s[z]!='0') {
-                s[z] = '0';
-                k--;
-            }
-            z++;
-        }
-        cout << s;
+        z++;
     }
+    cout << s;
     return 0;
 }
