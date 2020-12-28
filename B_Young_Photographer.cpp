@@ -12,11 +12,30 @@ int main() {
 
     int n;
     int x;
-    cin >> n >> x;
-    vector<pair<int, int>> v(n);
+    int a;
+    int b;
+    int z;
+    int cntb = 0;
+    int cntf = 0;
+    vector<int> v(1001);
+
+    cin >> n;
+    cin >> x;
     for(int i=0; i<n; i++) {
-        cin >> v[i].first >> v[i].second;
+        cin >> a;
+        cin >> b;
+        for(int j=a; j<=b; j++) {
+            v[j]++;
+        }
     }
-    
+    z = x;
+    while(v[z++]!=n)
+        cntf++;
+    z = x;
+    while(1) {
+        if(v[z--]!=n)
+            cntb++;
+    }
+
     return 0;
 }
