@@ -923,3 +923,36 @@ typedef int                  int32;
 typedef unsigned            uint32;
 typedef long long            int64;
 typedef unsigned long long  uint64;
+
+
+// Short and Concise
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef vector <int> vi;
+typedef pair< int ,int > pii;
+#define SIZE(X) ((int)(X.size()))
+#define X first
+#define Y second
+#define LENGTH(X) ((int)(X.length()))
+#define PB push_back
+#define MP(X,Y) make_pair(X,Y)
+#define MEM(a,b) memset(a,(b),sizeof(a))
+#define tr(c,it) for(typeof((c).begin()) it = (c).begin(); it != (c).end(); it++)
+#define present(c,x) ((c).find(x) != (c).end()) 
+#define cpresent(c,x) (find(all(c),x) != (c).end())
+#define ain(a,n) int ((a)[(n)]); for(int i=0; i<(n); i++) cin>>((a)[i])
+typedef long long LL;
+typedef long long int int64;
+typedef unsigned long long uLL;
+#define FOR(i,n) for(int i=0;i<n;i++)
+#define FU(i,a,n) for(int i=a;i<=n;i++)
+#define FD(i,a,n) for(int i=n;i>=a;i--)
+#define GI(n) scanf("%d",&n)
+#define GS(n) scanf("%s"&s)
+#define GII(n,m) scanf("%d %d",&n,&m)
+#define PI(n) printf("%d\n",n)
+#define PII(n,m) printf("%d %d\n",n,m)
+ 
+pii a[100007];
