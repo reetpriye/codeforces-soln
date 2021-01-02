@@ -1,12 +1,10 @@
-// 1327A 
+//  
 // Author: REET
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define FAST_IO ios_base::sync_with_stdio(false); cin.tie(NULL)
-#define mine(a) (*min_element((a).begin(), (a).end()))
-#define maxe(a) (*max_element((a).begin(), (a).end()))
 
 typedef long long ll;
 
@@ -16,10 +14,11 @@ int main() {
     int T;
     cin >> T;
     while(T--) {
-        int n;
-        int k;
-        cin >> n >> k;
-        if((n-k)%2!=0 || k>sqrt(n))
+        string s;
+        cin >> s;
+        if(s.size()&1)
+            cout << "NO\n";
+        else if(s.back()=='(' || s.front()==')')
             cout << "NO\n";
         else
             cout << "YES\n";

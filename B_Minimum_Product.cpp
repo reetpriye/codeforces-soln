@@ -1,4 +1,4 @@
-// 1327A 
+// 1409B 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -16,13 +16,16 @@ int main() {
     int T;
     cin >> T;
     while(T--) {
+        int a;
+        int b;
+        int x;
+        int y;
         int n;
-        int k;
-        cin >> n >> k;
-        if((n-k)%2!=0 || k>sqrt(n))
-            cout << "NO\n";
-        else
-            cout << "YES\n";
+        cin >> a >> b >> x >> y >> n;
+        
+
+
+
     }
     return 0;
 }
