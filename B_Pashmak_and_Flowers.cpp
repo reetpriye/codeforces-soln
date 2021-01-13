@@ -29,17 +29,10 @@ int main() {
     }
     max_cnt = count(v.begin(), v.end(), max);
     min_cnt = count(v.begin(), v.end(), min);
-    if(max==min) {
-        if(!(max_cnt&1)) {
-            max_cnt /= 2;
-            min_cnt /= 2;
-        }
-        else {
-            max_cnt /= 2;
-            min_cnt /= 2;
-            min_cnt++;
-        }
-    }
-    cout << abs(min-max) << " " << max_cnt*min_cnt;
+    cout << abs(min-max);
+    if(min==max)
+        cout << " " << ((n*(n-1))>>1);
+    else
+        cout << " " << max_cnt*min_cnt;
     return 0;
 }
