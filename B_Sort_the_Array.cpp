@@ -14,47 +14,62 @@ int main() {
     FAST_IO;
 
     int n;
-    int st, en;
-    int sti, eni;
-    int z;
-    bool found = true;
-    bool alreadySorted = true;
+    int start_idx;
+    int end_idx;
+    int start;
+    int end;
+    int tmp;
+    int start_idx2;
+    int end_idx2;
     cin >> n;
     vector<int> v(n);
     vector<int> s(n);
+    bool isSorted = true;
     for(int i=0; i<n; i++)
         cin >> v[i];
     s = v;
     sort(s.begin(), s.end());
     for(int i=0; i<n; i++) {
-        if(v[i]!=s[i])
-            alreadySorted = false;
+        if(v[i]!=s[i]) {
+            isSorted = false;
+            break;
+        }
     }
-    if(alreadySorted) {
+    if(isSorted) {
         cout << "yes\n1 1";
         return 0;
     }
-    for(int i=0; i<n; i++) {
-        if(v[i]!=s[i]) {
-            st = i;
-            sti = i+1;
-            z = i+1;
-            while(v[z]!=s[i] && z<n) {
-                z++;
+    for(int i=0; i<n-1; i++) {
+        if(v[i]>v[i+1]) {
+            start = i+1;
+            start_idx = i;
+            start_idx2 = i;
+            tmp = i;
+            while(v[tmp]>v[tmp+1] && tmp<n-1) {
+                tmp++;
             }
-            en = z;
-            eni = z+1;
-            while(en>=i) {
-                if(v[en]!=s[st]) {
-                    found = false;
+            end = tmp+1;
+            end_idx = tmp;
+            end_idx2 = tmp;
+            while(end_idx>=start_idx2) {
+                if(v[start_idx]!=s[end_idx]) {
+                    isSorted = false;
                     goto end;
                 }
-                en--;
-                st++;
+                end_idx--;
+                start_idx++;
             }
+            break;
+        }
+    }
+    for(int i=end_idx2+1; i<n; i++) {
+        if(v[i]!=s[i]) {
+            isSorted = false;
             goto end;
         }
     }
-    end: found ? cout << "yes\n" << sti << " " << eni : cout << "no\n";
+    isSorted = true;
+    end:
+        isSorted ? cout << "yes\n" << start << " " << end : cout << "no";
     return 0;
 }

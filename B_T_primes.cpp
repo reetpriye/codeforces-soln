@@ -1,32 +1,30 @@
 // 230B 
 // Author: REET
 
+// Solving using binary search
+
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 
-bool isPrime(ll n) {
-    if(n<2) return false;
-    for(ll i=2; i<=sqrt(n); i++) {
-        if(n%i==0)
-            return false;
-    }
-    return true;
-}
+static bool s[1000001];
 
 int main() {
-
-    ll n;
-    cin >> n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++)
-        cin >> v[i];
-    for(ll i=0; i<n; i++) {
-        if(((sqrt(v[i])*sqrt(v[i]))==v[i]) && isPrime(sqrt(v[i])))
-            cout << "YES\n";
-        else
-            cout << "NO\n";
+    vector<ll> primes = {4};
+    for(ll i=3; i<1000001; i+=2) {
+        if(s[i]) continue;
+        primes.push_back(i*i);
+        for(int x=i<<1; x<1000001; x+=i) {
+            s[x] = true;
+        }
     }
-    return 0;
+    ll n;
+    ll tmp;
+    cin >> n;
+    while(n--) {
+        cin >> tmp;
+        binary_search(primes.begin(), primes.end(), tmp) ? 
+        cout << "YES\n" : cout << "NO\n";
+    }
 }
