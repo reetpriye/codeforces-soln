@@ -1,4 +1,4 @@
-// 279B 
+// Upsolve 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -13,13 +13,15 @@ typedef long long ll;
 int main() {
     FAST_IO;
 
-    ll n;
-    ll t;
-    cin >> n >> t;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) {
-        cin >> v[i];
+    int T;
+    cin >> T;
+    // sqrt(2b+1), b, b+1
+    while(T--) {
+        ll n;
+        cin >> n;
+        ll b = n-1;
+        ll max_val_a = sqrt(2*b+1);
+        cout << ((max_val_a-1)/2) << "\n";
     }
-    
     return 0;
 }

@@ -1,4 +1,4 @@
-// 265B 
+// Upsolve 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -13,21 +13,12 @@ typedef long long ll;
 int main() {
     FAST_IO;
 
-    ll n;
+    int n;
     cin >> n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++)
+    vector<int> v(n);
+    for(int i=0; i<n; i++) {
         cin >> v[i];
-    vector<ll> req(n, 2);
-    req[0] = v[0]+1;
-    for(ll i=0; i<n-1; i++) {
-        if(v[i+1]<v[i]) {
-            req[i] += v[i]-v[i+1];
-        }
-        else if(v[i+1]>v[i]) {
-            req[i+1] += v[i+1]-v[i];
-        }
     }
-    cout << accumulate(req.begin(), req.end(), 0);
+    
     return 0;
 }

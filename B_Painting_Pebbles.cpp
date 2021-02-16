@@ -1,4 +1,4 @@
-// 279B 
+// 509B 
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -13,13 +13,12 @@ typedef long long ll;
 int main() {
     FAST_IO;
 
-    ll n;
-    ll t;
-    cin >> n >> t;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) {
+    int n;
+    int k;
+    cin >> n >> k;
+    vector<int> v(n);
+    for(int i=0; i<n; i++) {
         cin >> v[i];
     }
-    
     return 0;
 }
