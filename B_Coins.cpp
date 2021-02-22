@@ -1,4 +1,4 @@
-// 
+// 58B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -37,9 +37,54 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define mem0(a) memset(a,0,sizeof(a))
 #define ppc     __builtin_popcount
 #define ppcll   __builtin_popcountll
+#define SIZE 1e6+1
+
+// vector<bool> sieve(SIZE, true);
+
+// void generatePrimeSieve() {
+//     sieve[0] = false;
+//     sieve[1] = false;
+//     for(int i=2; i<SIZE; i++) {
+//         if(sieve[i]) {
+//             for(int j=i*i; j<SIZE; j+=i) {
+//                 sieve[j] = false;
+//             }
+//         }
+//     }
+// }
+
+// void solve() {
+//     int n;
+//     cin >> n;
+//     generatePrimeSieve();
+//     while(1) {
+//         if(n==1) {
+//             cout << "1";
+//             return;
+//         }
+//         if(sieve[n]) {
+//             cout << n << " 1";
+//             return;
+//         }
+//         cout << n << " ";
+//         for(int i=2; i*i<=n; i++) {
+//             if(n%i==0) {
+//                 n /= i;
+//                 break;
+//             }
+//         }
+//     }
+// }
 
 void solve() {
-    
+    int n;
+    cin >> n;
+    for(int i=n; i>=1; i--) {
+        if(n%i==0) {
+            cout << i << " ";
+            n = i;
+        }
+    }
 }
 
 signed main() {
@@ -47,7 +92,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

@@ -16,24 +16,24 @@ int main() {
     ll x, y;
     ll n;
     ll M = 1e9+7;
-    ll res = 0;
-    ll temp;
+    ll res;
     cin >> x >> y >> n;
-    if(n==1) {
-        cout << x%M;
-    }
-    else if(n==2) {
-        cout << y%M;
-    }
-    else {
-        n -= 2;
-        while(n--) {
-            res = (y-x);
-            temp = y;
-            y = (y-x);
-            x = temp;
-        }
-        cout << res%M;
-    }
+    n %= 6;
+    if(n==1)
+        res = x;
+    else if(n==2)
+        res = y;
+    else if(n==3) 
+        res = y-x;
+    else if(n==4)
+        res = -x;
+    else if(n==5)
+        res = -y;
+    else
+        res = x-y;
+    res %= M;
+    if(res<0)
+        res += M;
+    cout << res;
     return 0;
 }

@@ -17,9 +17,21 @@ int main() {
     ll t;
     cin >> n >> t;
     vector<ll> v(n);
-    for(ll i=0; i<n; i++) {
+    for(ll i=0; i<n; i++)
         cin >> v[i];
+    ll sum = 0;
+    ll cnt = 0;
+    ll k = 0;
+    for(ll i=0; i<n; i++) {
+        sum += v[i];
+        if(sum<=t) {
+            cnt++;
+        }
+        else {
+            sum -= v[k];
+            k++;
+        }
     }
-    
+    cout << cnt;
     return 0;
 }

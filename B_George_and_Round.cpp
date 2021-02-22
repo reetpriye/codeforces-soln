@@ -1,4 +1,4 @@
-// 
+// 387B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -23,8 +23,8 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppb     pop_back
 #define ppf     pop_front
 #define mp      make_pair
-#define fi      first
-#define se      second
+#define xx      first
+#define yy      second
 
 #define all(x)  (x).begin(),(x).end()
 #define lla(x)  (x).rbegin(), (x).rend()
@@ -39,7 +39,40 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
-    
+    int n;
+    int m;
+    cin >> n;
+    cin >> m;
+    vector<int> a(n);
+    vector<int> b(m);
+    for(int i=0; i<n; i++) {
+        cin >> a[i];
+    }
+    for(int i=0; i<m; i++) {
+        cin >> b[i];
+    }
+    sort(all(a));
+    sort(all(b));
+    int i = 0;
+    int j = 0;
+    while(1) {
+        if(i==n) {
+            cout << "0";
+            return;
+        }
+        while(1) {
+            if(j==m) {
+                cout << n-i;
+                return;
+            }
+            if(b[j]>=a[i]) {
+                j++;
+                break;
+            }
+            j++;
+        }
+        i++;
+    }
 }
 
 signed main() {
@@ -47,7 +80,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

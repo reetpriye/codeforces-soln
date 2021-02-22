@@ -1,4 +1,4 @@
-// 
+// 151B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -39,7 +39,34 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
-    
+    int z, p = -1 ,t = -1 ,g = -1;
+	cin >> z;
+	string fint, finp, fing;
+	while(z--) {
+		int k, pizza=0, girl=0, taxi=0;
+		char tem;
+		string str;
+		cin >> k >> str;
+		for(int i=0;i<k;i++) {
+			int a,b,c;
+			cin>>a>>tem>>b>>tem>>c;
+			if(a%10==a/10 && a==b && a==c)
+				taxi++;
+			else if(a/10>a%10 && a%10>b/10 && b/10>b%10 && b%10>c/10 && c/10>c%10)
+				pizza++;
+			else
+				girl++;
+		}
+		if(taxi>t) fint=" "+str, t=taxi;
+		else if(taxi==t) fint+=", "+str;
+		if(pizza>p) finp=" "+str, p=pizza;
+		else if(pizza==p) finp+=", "+str;
+		if(girl>g) fing=" "+str, g=girl;
+		else if(girl==g) fing+=", "+str;
+	}
+	cout<<"If you want to call a taxi, you should call:"<<fint<<"."<<endl;
+	cout<<"If you want to order a pizza, you should call:"<<finp<<"."<<endl;
+	cout<<"If you want to go to a cafe with a wonderful girl, you should call:"<<fing<<"."<<endl;
 }
 
 signed main() {
@@ -47,7 +74,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

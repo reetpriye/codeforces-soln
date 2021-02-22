@@ -1,4 +1,4 @@
-// 
+// 282B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -39,15 +39,21 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
+    int n;
+    cin >> n;
+    vector<pair<int, int>> v(n);
+    for(int i=0; i<n; i++) {
+        cin >> v[i].fi >> v[i].se;
+    }
     
-}
+}   
 
 signed main() {
     FAST_IO;
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

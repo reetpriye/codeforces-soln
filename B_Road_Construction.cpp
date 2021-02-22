@@ -1,4 +1,4 @@
-// 
+// 330B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -39,7 +39,28 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
-    
+    int n;
+    int m;
+    cin >> n >> m;
+    int tmp;
+    vector<bool> hash(1e3+1, true);
+    vector<pair<int, int>> v(m);
+    for(int i=0; i<2*m; i++) {
+        cin >> tmp;
+        hash[tmp] = false;
+    }
+    int av;
+    for(int i=1; i<hash.size(); i++) {
+        if(hash[i]) {
+            av = i;
+            break;
+        }
+    }
+    cout << n-1 << "\n";
+    for(int i=1; i<=n; i++) {
+        if(i!=av)
+            cout << i << " " << av << "\n";
+    }
 }
 
 signed main() {
@@ -47,7 +68,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

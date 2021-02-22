@@ -1,4 +1,4 @@
-// 
+// 352B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -39,7 +39,48 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
-    
+    int diff;
+    int n;
+    cin >> n;
+    vector<vector<int>> v(1e5+1);
+    int tmp;
+    int maxi = -1;
+    for(int i=0; i<n; i++) {
+        cin >> tmp;
+        maxi = max(maxi, tmp);
+        v[tmp].pb(i+1);
+    }
+    vector<pair<int, int>> res;
+    for(int i=1; i<=maxi; i++) {
+        if(v[i].size()==0)
+            continue;
+        else if(v[i].size()==1) {
+            res.pb(mp(i, 0));
+        }
+        else if(v[i].size()==2) {
+            res.pb(mp(i, v[i][1]-v[i][0]));
+        }
+        else {
+            bool flag = true;
+            for(int j=1; j<v[i].size()-1; j++) {
+                int curr = v[i][j];
+                int next = v[i][j+1];
+                int prev = v[i][j-1];
+                diff = curr-prev;
+                if(next-curr!=curr-prev) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag) {
+                res.pb(mp(i, diff));
+            }
+        }
+    }
+    cout << res.size() << "\n";
+    for(int i=0; i<res.size(); i++) {
+        cout << res[i].fi << " " << res[i].se << "\n";        
+    }
 }
 
 signed main() {
@@ -47,7 +88,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

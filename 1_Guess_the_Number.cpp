@@ -1,4 +1,4 @@
-// 
+// 101021-1
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -23,8 +23,8 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppb     pop_back
 #define ppf     pop_front
 #define mp      make_pair
-#define fi      first
-#define se      second
+#define xx      first
+#define yy      second
 
 #define all(x)  (x).begin(),(x).end()
 #define lla(x)  (x).rbegin(), (x).rend()
@@ -38,16 +38,46 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppc     __builtin_popcount
 #define ppcll   __builtin_popcountll
 
+// void solve() {
+//     int num = 1e6;
+//     string prev;
+//     string s;
+//     int st = 1;
+//     int en = 1e6;
+//     int mid;
+//     while(1) {
+//         mid = st+(en-st)/2;
+//         if(en==mid || st==mid) {
+//             cout << "! " << mid << endl;
+//             return;
+//         }
+//         cout << mid << endl;
+//         cin >> s;
+//         s == "<" ? en = mid : st = mid;
+//     }
+// }
+
 void solve() {
-    
+    string s;
+    int st = 1;
+    int en = 1000000;
+    int mid;
+    while(st!=en) {
+        // mid = st+(en-st)/2;
+        mid = (st+en+1)/2;
+        cout << mid << endl;
+        cin >> s;
+        s == "<" ? en = mid-1 : st = mid;
+    }
+    cout << "! " << st << endl;
 }
 
 signed main() {
-    FAST_IO;
+    // FAST_IO;
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

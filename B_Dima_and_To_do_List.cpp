@@ -1,4 +1,4 @@
-// 
+// 366B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -38,8 +38,30 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppc     __builtin_popcount
 #define ppcll   __builtin_popcountll
 
+bool sortBySec(pair<int, int> a, pair<int, int> b) {
+    if(a.se==b.se) return a.fi < b.fi;
+    return a.se < b.se;
+}
+
 void solve() {
-    
+    int n;
+    int k;
+    int tmp;
+    cin >> n >> k;
+    vector<pair<int, int>> v(k);
+    for(int i=0; i<n; i++) {
+        cin >> tmp;
+        v[(i+1)%k].fi = (i+1)%k;
+        v[(i+1)%k].se += tmp;
+    }
+    sort(all(v), sortBySec);
+    if(v[0].fi==0 && v[1].se==v[0].se) {
+        cout << v[1].fi;
+    }
+    else if(v[0].fi==0)
+        cout << k;
+    else
+        cout << v[0].fi;
 }
 
 signed main() {
@@ -47,7 +69,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

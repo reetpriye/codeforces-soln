@@ -1,4 +1,4 @@
-// 
+// 337B
 // Author: REET
 
 #include <bits/stdc++.h>
@@ -39,7 +39,35 @@ template<class T> inline bool even(T x){return !odd(x);}
 #define ppcll   __builtin_popcountll
 
 void solve() {
-    
+    int a; // Monitor's width
+    int b; // Monitor's height
+    int c; // Movie's width
+    int d; // Movie's height
+    cin >> a >> b >> c >> d;
+    double e, f;
+    int num;
+    int den;
+    int div;
+    e = d*((double)a/c); // Width same
+    f = c*((double)b/d); // Height same
+    if((b-e)>=(a-f)) {
+        // Let's do height conversion
+        b *= c;
+        d *= a;
+        num = b-d;
+        den = b;
+    }
+    else {
+        // Let's do width conversion
+        a *= d;
+        c *= b;
+        num = a-c;
+        den = a;  
+    }
+    div = __gcd(num, den);
+    num /= div;
+    den /= div;
+    cout << num << "/" << den;
 }
 
 signed main() {
@@ -47,7 +75,7 @@ signed main() {
 
     int T;
     T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }
